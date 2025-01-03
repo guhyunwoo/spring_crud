@@ -4,10 +4,8 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
+
 
 @NoArgsConstructor
 @Entity

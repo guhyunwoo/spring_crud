@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.domain.controller;
 
 import com.example.demo.domain.UserRepository;
 import com.example.demo.domain.dto.UserRequest.SaveUserRequest;
@@ -7,6 +7,7 @@ import com.example.demo.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,5 +22,8 @@ public class UserController {
         return userService.save(request);
     }
 
-    @GetMapping("")
+    @GetMapping("/user?{id}")
+    public UserResponse get(@PathVariable Long id) {
+        return UserResponse(get(user_id == id))
+    }
 }
